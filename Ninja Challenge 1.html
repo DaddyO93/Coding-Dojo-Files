@@ -7,11 +7,18 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		var leftValue = 450, topValue = 100;
+		var leftValue = 450, topValue = 100, imgChng = 1;
 
 		function update() {
 			document.getElementById("character").style.left = leftValue + "px";
 			document.getElementById("character").style.top = topValue + "px";
+		}
+
+		function changeImage(){ // Alternates between images
+			imgChng ++;
+			if (imgChng > 2){
+				imgChng = 1;
+			}
 		}
 
 		document.onkeydown = function (e) {
