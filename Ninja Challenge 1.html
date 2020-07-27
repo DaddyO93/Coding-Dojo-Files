@@ -7,16 +7,17 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		var leftValue = 450, topValue = 100, imgChng = 1;
+		var leftValue = 450, topValue = 100, direction = "down", imgChng = 1;
 
 		function update() {
 			document.getElementById("character").style.left = leftValue + "px";
 			document.getElementById("character").style.top = topValue + "px";
+			document.getElementById("character").style.background = "url('img/" + direction + imgChng + ".png')";
 		}
 
-		function changeImage(){ // Alternates between images
+		function changeImage() { // Alternates between images
 			imgChng ++;
-			if (imgChng > 2){
+			if (imgChng > 2) {
 				imgChng = 1;
 			}
 		}
@@ -25,15 +26,24 @@
 			console.log(e);
 			if (e.keyCode == 37 && leftValue > 50) { // LEFT
 				leftValue = leftValue - 10;
+				direction = "left"
+				changeImage();
 			}
 			else if (e.keyCode == 39 && leftValue < 1150) { // RIGHT
 				leftValue = leftValue + 10;
+				direction = "right"
+				changeImage();
 			}
 			else if (e.keyCode == 40 && topValue < 750) { // DOWN
 				topValue = topValue + 10;
+				direction = "down"
+				changeImage();
+
 			}
 			else if (e.keyCode == 38 && topValue > 50) { // UP
 				topValue = topValue - 10;
+				direction = "top"
+				changeImage();
 			}
 			update();
 		}
