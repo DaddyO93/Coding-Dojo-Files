@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <title>NinjaMan</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wall {
+            background-color: blue;
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+        }
+        
+        .row {
+            line-height: 0;
+        }
+        
+        .sushi {
+            background-color: black;
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+            background-image: url('img/sushi.png');
+            background-size: contain;
+        }
+        
+        .blank {
+            background-color: black;
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+        }
+        
+        #ninjaman {
+            background-color: black;
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+            background-image: url('img/ninja.gif');
+            background-size: contain;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id='world'>
+        <div class='row'>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+        </div>
+        <div class='row'>
+            <div class='wall'></div>
+            <div class='blank'></div>
+            <div class='sushi'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+        </div>
+        <div class='row'>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+        </div>
+        <div class='row'>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+        </div>
+        <div class='row'>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+            <div class='wall'></div>
+        </div>
+    </div>
+    <div id='ninjaman'></div>
+
+</body>
+<script text="text/javascript">
+    var worldMap = [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    ];
+
+    var worldDictionary = {
+        0: 'wall',
+        1: 'blank',
+        2: 'sushi'
+    }
+
+    function buildWorld() {
+        output = "";
+        for (var row = 0; row < worldMap.length; row++) {
+            output = "<div class = 'row'></div";
+
+        }
+    }
+</script>
+
+</html>
