@@ -10,8 +10,8 @@
         
         .wall {
             background-color: blue;
-            height: 10px;
-            width: 10px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
         }
         
@@ -21,8 +21,8 @@
         
         .sushi {
             background-color: black;
-            height: 10px;
-            width: 10px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
             background-image: url('img/sushi.png');
             background-size: contain;
@@ -30,93 +30,149 @@
         
         .blank {
             background-color: black;
-            height: 10px;
-            width: 10px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
         }
         
         #ninjaman {
             background-color: black;
-            height: 10px;
-            width: 10px;
+            height: 40px;
+            width: 40px;
             display: inline-block;
             background-image: url('img/ninja.gif');
             background-size: contain;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 40px;
+            left: 40px;
         }
     </style>
 
 </head>
 
 <body>
-    <div id='world'>
-        <div class='row'>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-        </div>
-        <div class='row'>
-            <div class='wall'></div>
-            <div class='blank'></div>
-            <div class='sushi'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-        </div>
-        <div class='row'>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-        </div>
-        <div class='row'>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-        </div>
-        <div class='row'>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-            <div class='wall'></div>
-        </div>
-    </div>
+    <div id='world'></div>
     <div id='ninjaman'></div>
+    <div id='runningScore'></div>
 
 </body>
-<script text="text/javascript">
-    var worldMap = [
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    ];
-
+<script type="text/javascript">
     var worldDictionary = {
         0: 'wall',
         1: 'blank',
         2: 'sushi'
     }
 
-    function buildWorld() {
-        output = "";
-        for (var row = 0; row < worldMap.length; row++) {
-            output = "<div class = 'row'></div";
+    var arrayLength = 10,
+        arrayHeight = 10,
+        world = [],
+        worldItem,
+        score = 0,
+        worldRow,
+        worldColumn,
+        north = worldRow - 1,
+        south = worldRow + 1,
+        east = worldColumn + 1,
+        west = worldColumn - 1;
 
+    function randItem() { // randomizes items for dictionary
+        worldItem = Math.floor(Math.random() * 3);
+    }
+
+    function createWorld() {
+        for (var worldRow = 0; worldRow < arrayLength; worldRow++) { // Creates initial nested array into 'world' array
+            world.push([]);
+            for (var worldColumn = 0; worldColumn < arrayHeight; worldColumn++) { // Ensures boarder of map is 'wall'
+                if (worldRow == 0 || worldRow == arrayHeight - 1 || worldColumn == 0 || worldColumn == arrayLength - 1) {
+                    worldItem = 0;
+                } else { // Populates array with random numbers represting items from 'worldDictionary'
+                    randItem()
+                }
+                world[worldRow].push(worldItem);
+
+            }
         }
+    }
+    createWorld()
+
+    function drawWorld() {
+        output = "";
+        for (var row = 0; row < world.length; row++) {
+            output += "<div class = 'row'>"
+            for (var column = 0; column < world[row].length; column++) {
+                output += "<div class = '" + worldDictionary[world[row][column]] + "'></div>"
+            }
+            output += "</div>"
+            document.getElementById('world').innerHTML = output;
+        }
+    }
+    drawWorld()
+
+    var ninjaman = {
+        x: 1,
+        y: 1
+    }
+
+    function drawNinjaman() {
+        document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px'
+        document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px'
+    }
+    drawNinjaman()
+
+    function keepScore(direction) {
+        if (direction == 2) { // eats sushi
+            score += 10;
+            drawScore()
+        }
+
+        //if (world[ninjaman.x][ninjaman.y] == 3) { // eats ghost
+        //    score + 5;
+        //}
+    }
+
+    function drawScore() {
+        input = "";
+        input = "<h1>Score: " + score + "</h1>"
+        document.getElementById('runningScore').innerHTML = input;
+    }
+    drawScore()
+
+
+    document.onkeydown = function(e) {
+        var left = world[ninjaman.y][ninjaman.x - 1];
+        var right = world[ninjaman.y][ninjaman.x + 1];
+        var down = world[ninjaman.y + 1][ninjaman.x];
+        var up = world[ninjaman.y - 1][ninjaman.x];
+
+        if (e.keyCode == 37) { //Left
+            if (left != 0) {
+                keepScore(left)
+                ninjaman.x--;
+            }
+        }
+        if (e.keyCode == 39) { //Right
+            if (right != 0) {
+                keepScore(right)
+                ninjaman.x++;
+            }
+        }
+        if (e.keyCode == 40) { //Down
+            if (down != 0) {
+                keepScore(down)
+                ninjaman.y++;
+            }
+        }
+        if (e.keyCode == 38) { // Up
+            if (up != 0) {
+                keepScore(up)
+                ninjaman.y--;
+            }
+        }
+        keepScore()
+        world[ninjaman.y][ninjaman.x] = 1;
+        //drawScore()
+        drawNinjaman()
+        drawWorld()
     }
 </script>
 
