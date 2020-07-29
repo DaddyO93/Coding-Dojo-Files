@@ -28,6 +28,15 @@
             background-size: contain;
         }
         
+        .onigiri {
+            background-color: black;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url('img/onigiri.png');
+            background-size: contain;
+        }
+        
         .blank {
             background-color: black;
             height: 40px;
@@ -57,44 +66,46 @@
 
 </body>
 <script type="text/javascript">
+    var world = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 2, 2, 2, 2, 2, 2, 2, 0],
+        [0, 2, 0, 0, 0, 2, 0, 0, 2, 0],
+        [0, 2, 0, 2, 2, 2, 2, 0, 2, 0],
+        [0, 2, 2, 2, 0, 0, 2, 2, 2, 0],
+        [0, 2, 0, 2, 2, 3, 2, 0, 2, 0],
+        [0, 2, 0, 0, 2, 0, 0, 0, 2, 0],
+        [0, 2, 2, 2, 2, 2, 2, 2, 2, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ]
+
     var worldDictionary = {
         0: 'wall',
         1: 'blank',
-        2: 'sushi'
+        2: 'sushi',
+        3: 'onigiri'
     }
 
     var arrayLength = 10,
         arrayHeight = 10,
-        world = [],
+        //world = [],
         worldItem,
-        score = 0,
-        worldRow,
-        worldColumn,
-        north = worldRow - 1,
-        south = worldRow + 1,
-        east = worldColumn + 1,
-        west = worldColumn - 1;
-
-    function randItem() { // randomizes items for dictionary
-        worldItem = Math.floor(Math.random() * 3);
-    }
-
-    function createWorld() {
-        for (var worldRow = 0; worldRow < arrayLength; worldRow++) { // Creates initial nested array into 'world' array
-            world.push([]);
-            for (var worldColumn = 0; worldColumn < arrayHeight; worldColumn++) { // Ensures boarder of map is 'wall'
-                if (worldRow == 0 || worldRow == arrayHeight - 1 || worldColumn == 0 || worldColumn == arrayLength - 1) {
-                    worldItem = 0;
-                } else { // Populates array with random numbers represting items from 'worldDictionary'
-                    randItem()
+        score = 0;
+    /*
+        function createWorld() {
+            for (var worldRow = 0; worldRow < arrayLength; worldRow++) { // Creates initial nested array into 'world' array
+                world.push([]);
+                for (var worldColumn = 0; worldColumn < arrayHeight; worldColumn++) { // Ensures boarder of map is 'wall'
+                    if (worldRow == 0 || worldRow == arrayHeight - 1 || worldColumn == 0 || worldColumn == arrayLength - 1) {
+                        worldItem = 0;
+                    } else { // Populates array with random numbers represting items from 'worldDictionary'
+                        worldItem = Math.floor(Math.random() * 3);
+                    }
+                    world[worldRow].push(worldItem);
                 }
-                world[worldRow].push(worldItem);
-
             }
         }
-    }
-    createWorld()
-
+        createWorld()
+    */
     function drawWorld() {
         output = "";
         for (var row = 0; row < world.length; row++) {
@@ -122,6 +133,9 @@
     function keepScore(direction) {
         if (direction == 2) { // eats sushi
             score += 10;
+            drawScore()
+        } else if (direction == 3) { // eats onigiri
+            score += 20;
             drawScore()
         }
 
