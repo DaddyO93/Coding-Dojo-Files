@@ -31,11 +31,20 @@
             width: 70px;
             height: 40px;
         }
+        
+        .missile {
+            position: absolute;
+            background-image: url("img/pinpng.com-comet-customized.png");
+            background-size: contain;
+            width: 6px;
+            height: 25px;
+        }
     </style>
 
     <div id="ocean">
         <div id="players"></div>
         <div id="enemies"></div>
+        <div id="missile"></div>
     </div>
 
     <script type="text/javascript">
@@ -43,6 +52,7 @@
             left: 450,
             top: 400
         }
+        var missile = [];
 
         var enemies = [{
                 left: 350,
@@ -67,7 +77,9 @@
             // enemyLocationTop = 50,
             // numberEnemies = 6,
             // columns = 2, // change as levels/number of enemies increase?
-            speed = 10; // powerups/debuffs adjust speed?
+            playerSpeed = 10, // powerups/debuffs adjust speed?
+            enemySpeed = 1.2, // powerups/debuffs adjust speed?
+            missileSpeed = 15; // powerups/debuffs adjust speed?
 
         /* 
             function placeEnemies() { //creates an array of arrays with enemy locations placed in grid
@@ -87,7 +99,6 @@
             content = "<div class = 'player' style ='left:" + player.left + "px; top:" + player.top + "px'></div>";
             document.getElementById("players").innerHTML = content;
         }
-        drawPlayer();
 
         function drawEnemies() {
             content = "";
@@ -97,23 +108,71 @@
             document.getElementById("enemies").innerHTML = content;
 
         }
-        drawEnemies();
+
+        function drawMissiles() {
+            content = "";
+            for (var idx = 0; idx < missile.length; idx++) {
+                content += "<div class = 'missile' style ='left:" + missile[idx].left + "px; top:" + missile[idx].top + "px'></div>";
+            }
+            document.getElementById("missile").innerHTML = content;
+
+        }
+
+        /*
+                function removeEnemies() { //enemies are to disappear at bottom of background image - needs work
+                    if (enemies[0].top > 450) {
+                        if (document.getElementById("enemies").hasChildNodes()) {
+                            document.getElementById("enemies").removeChild(document.getElementById("enemies").childNodes[0]);
+                        }
+                    }
+                }
+        */
+
+        function moveEnemies() {
+            for (var idx = 0; idx < enemies.length; idx++) {
+                enemies[idx].top += enemySpeed;
+            }
+        }
+
+        function moveMissiles() {
+            for (var idx = 0; idx < missile.length; idx++) {
+                missile[idx].top -= missileSpeed;
+            }
+        }
 
         document.onkeydown = function(e) {
             if (e.keyCode == 37 && player.left > 10) { //Left
-                player.left -= speed;
+                player.left -= playerSpeed;
             }
             if (e.keyCode == 39 && player.left < 890) { //Right
-                player.left += speed;
+                player.left += playerSpeed;
             }
             if (e.keyCode == 40 && player.top < 400) { //Down
-                player.top += speed;
+                player.top += playerSpeed;
             }
             if (e.keyCode == 38 && player.top > 300) { // Up
-                player.top -= speed;
+                player.top -= playerSpeed;
+            }
+            if (e.keyCode == 32) { // fire w/spacebar
+                missile.push({
+                    left: (player.left + 32),
+                    top: (player.top - 15)
+                })
+                drawMissiles();
             }
             drawPlayer();
         }
+
+        function gameLoop() {
+            drawPlayer();
+            moveEnemies();
+            drawMissiles();
+            moveMissiles();
+            //removeEnemies();
+            drawEnemies();
+            setTimeout(gameLoop, 25)
+        }
+        gameLoop();
     </script>
 </body>
 
