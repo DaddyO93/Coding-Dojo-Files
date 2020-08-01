@@ -1,30 +1,20 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<title></title>
+</head>
 <body>
-	<div id='background'>
-        <div id='character' style='position:absolute; top:100px; left:450px; background-image: url("img/down1.png"); width:59px; height:86px;'></div>
-    </div>
-    <script type="text/javascript">
-	    var leftValue = 450, topValue = 100;
+	<style type="text/css">
 
-    	function update(){
-    		document.getElementById("character").style.left = leftValue+"px";
-    		document.getElementById("character").style.top = topValue+"px";
-    	}
+	</style>
 
-    	document.onkeydown = function(e){
-    		console.log(e);
-    		if(e.keyCode == 37) { // LEFT
-    			leftValue = leftValue - 10;
-    		}
-    		else if (e.keyCode == 39) { // RIGHT
-    			leftValue = leftValue + 10;    		
-    		}
-    		else if (e.keyCode == 40) { // DOWN
-				topValue = topValue + 10;
-    		}
-    		// ...
-    		update();
-    	}
-    </script>
+
+
+
+
+	<script type="text/javascript">
+	
+
+	</script>
 </body>
 </html>
