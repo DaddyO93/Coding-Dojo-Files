@@ -1,0 +1,50 @@
+#wrapper {
+    width: 725px;
+    height: auto;
+    padding: 20px;
+    background-color: lightgrey;
+    overflow: hidden;
+}
+
+.p {
+    text-align: center;
+    text-emphasis-style: thick;
+}
+
+#header {
+    margin-bottom: 20px;
+}
+
+#innerWhite {
+    text-align: center;
+    padding: 10px;
+    margin: 10px 5px;
+    height: 140px;
+    width: 140px;
+    background-color: lightblue;
+    border-style: solid;
+    border-width: thick;
+}
+
+.boarderImages {
+    /* padding: 10px; */
+    display: block;
+    float: left;
+}
+
+#innerPink {
+    text-align: center;
+    padding: 10px;
+    margin: 10px 5px;
+    height: 140px;
+    width: 140px;
+    background-color: palevioletred;
+    border-style: solid;
+    border-width: thick;
+}
+
+.pinkImages {
+    /* padding: 10px; */
+    display: block;
+    float: left;
+}
