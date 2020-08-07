@@ -35,8 +35,9 @@ img {
 
 .boarderImages img {
     text-align: center;
+    display: block;
     padding: 10px;
-    margin: 0px 2px;
+    margin: 4px 2px;
     background-color: lightslategray;
     border-style: solid;
     border-width: medium;
@@ -49,8 +50,9 @@ img {
 
 .pinkImages img {
     text-align: center;
+    display: block;
     padding: 10px;
-    margin: 0px 2px;
+    margin: 4px 2px;
     background-color: palevioletred;
     border-style: solid;
     border-width: medium;
