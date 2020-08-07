@@ -23,13 +23,9 @@ img {
     height: auto;
 }
 
-.innerWhite {
-    text-align: center;
-    padding: 10px;
-    margin: 4px 2px;
-    background-color: lightslategray;
-    border-style: solid;
-    border-width: medium;
+.header img {
+    width: 120px;
+    height: 60px;
 }
 
 .boarderImages {
@@ -37,11 +33,11 @@ img {
     float: left;
 }
 
-.innerPink {
+.boarderImages img {
     text-align: center;
     padding: 10px;
-    margin: 4px 2px;
-    background-color: palevioletred;
+    margin: 0px 2px;
+    background-color: lightslategray;
     border-style: solid;
     border-width: medium;
 }
@@ -49,4 +45,13 @@ img {
 .pinkImages {
     display: block;
     float: left;
+}
+
+.pinkImages img {
+    text-align: center;
+    padding: 10px;
+    margin: 0px 2px;
+    background-color: palevioletred;
+    border-style: solid;
+    border-width: medium;
 }
