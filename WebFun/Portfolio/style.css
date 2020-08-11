@@ -1,0 +1,147 @@
+* {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+#wrapper {
+    width: 1080px;
+}
+
+.mainBlock {
+    background-image: radial-gradient(rgb(131, 75, 131), rgb(31, 1, 31));
+    padding: 25px;
+}
+
+.blocks {
+    background-image: linear-gradient(to right, white, darkgrey);
+    display: inline-block;
+}
+
+.header {
+    background-image: linear-gradient(lightgray, white);
+}
+
+.header>p {
+    display: inline-block;
+    margin: 20px;
+}
+
+.header p:nth-child(1) {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.header p:nth-child(2) {
+    margin-left: 350px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.mainUpper>img {
+    height: 300px;
+    border: 5px solid lightgray;
+}
+
+.mainUpper>img,
+.about {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.about {
+    height: 310px;
+    width: 520px;
+    margin-left: 20px;
+}
+
+.text {
+    color: black;
+    padding: 0px 10px;
+    margin-top: 10px;
+}
+
+.mainLower {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.lowerBlocks {
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    width: 320px;
+    height: 700px;
+    margin-right: 20px;
+}
+
+.lowerBlocks>img {
+    width: 320px;
+}
+
+.lowerBlocks>p {
+    height: 220px;
+}
+
+.lowerBlocks:last-child {
+    margin-right: 0px;
+}
+
+a {
+    color: black;
+}
+
+.horizontalDivider {
+    background-image: linear-gradient(rgb(160, 158, 158), rgb(97, 97, 97), rgb(160, 158, 158));
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+}
+
+.techGrid {
+    display: inline-block;
+}
+
+.techGrid>img {
+    height: 49px;
+    margin: 5px;
+}
+
+button {
+    background-color: rgb(0, 128, 64);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: rgba(128, 128, 128, 0.363) 5px 5px;
+}
+
+button:hover {
+    background-color: gray;
+    color: black;
+}
+
+.footer {
+    height: 80px;
+    text-align: center;
+    color: black;
+    display: block;
+    background-image: linear-gradient(white, lightgray);
+}
+
+.footer>img,
+a {
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+}
+
+.footer>img {
+    vertical-align: middle;
+}
