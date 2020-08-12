@@ -3,110 +3,116 @@
     font-size: 18px;
 }
 
-#wrapper {
-    width: 1080px;
+a {
+    color: black;
 }
 
-.mainBlock {
-    background-image: radial-gradient(rgb(131, 75, 131), rgb(31, 1, 31));
-    padding: 25px;
+p {
+    padding: 0px 10px;
 }
 
-.blocks {
-    background-image: linear-gradient(to right, white, darkgrey);
+h1 {
     display: inline-block;
-}
-
-.header {
-    background-image: linear-gradient(lightgray, white);
-}
-
-.header>p {
-    display: inline-block;
-    margin: 20px;
-}
-
-.header p:nth-child(1) {
+    margin: 10px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-weight: bolder;
     font-size: 40px;
 }
 
-.header p:nth-child(2) {
-    margin-left: 350px;
-    font-size: 25px;
+h3 {
+    display: inline-block;
+    margin-left: 475px;
+    font-size: 20px;
     font-weight: bolder;
 }
 
-.mainUpper>img {
+h4 {
+    font-weight: bolder;
+    color: white;
+}
+
+h5 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#wrapper {
+    width: 1080px;
+    background-image: linear-gradient(darkgrey, white, darkgrey);
+}
+
+h5 a {
+    font-style: italic;
+    display: inline;
+    text-align: center;
+}
+
+h5 img {
+    vertical-align: middle;
+    height: 25px;
+    display: inline;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.horizontalDivider {
+    background-image: linear-gradient(rgb(160, 158, 158), rgb(97, 97, 97), rgb(160, 158, 158));
+    margin: 0px;
+    padding: 10px;
+}
+
+#mainBlock {
+    background-image: radial-gradient(rgb(131, 75, 131), rgb(31, 1, 31));
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+#mainBlock img:first-child {
     height: 300px;
     border: 5px solid lightgray;
+    display: inline-block;
 }
 
-.mainUpper>img,
-.about {
+#mainUpper {
     display: inline-block;
     vertical-align: top;
-}
-
-.about {
     height: 310px;
-    width: 520px;
+    width: 535px;
     margin-left: 20px;
-}
-
-.text {
-    color: black;
-    padding: 0px 10px;
-    margin-top: 10px;
-}
-
-.mainLower {
-    display: inline-block;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, white, darkgrey);
 }
 
 .lowerBlocks {
     display: inline-block;
     vertical-align: top;
-    text-align: justify;
-    width: 320px;
+    width: 325px;
     height: 700px;
     margin-right: 20px;
-}
-
-.lowerBlocks>img {
-    width: 320px;
-}
-
-.lowerBlocks>p {
-    height: 220px;
+    padding: 0px;
+    background-image: linear-gradient(to right, white, darkgrey);
 }
 
 .lowerBlocks:last-child {
     margin-right: 0px;
 }
 
-a {
-    color: black;
+.lowerBlocks p {
+    height: 220px;
+    text-align: justify;
 }
 
-.horizontalDivider {
-    background-image: linear-gradient(rgb(160, 158, 158), rgb(97, 97, 97), rgb(160, 158, 158));
-    font-size: 20px;
-    font-weight: bolder;
-    color: white;
-    margin: 0px;
-    padding: 10px;
-}
-
-.techGrid {
+#mainBlock .lowerBlocks>img {
     display: inline-block;
+    width: 50px;
+    padding: 5px;
 }
 
-.techGrid>img {
-    height: 49px;
-    margin: 5px;
+#mainBlock .lowerBlocks .tech {
+    width: 325px;
+    height: auto;
+    padding: 0px;
 }
 
 button {
@@ -115,8 +121,7 @@ button {
     border-radius: 10px;
     border: 1px solid black;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 5px auto;
     font-weight: bold;
     padding: 5px;
     box-shadow: rgba(128, 128, 128, 0.363) 5px 5px;
@@ -125,24 +130,4 @@ button {
 button:hover {
     background-color: gray;
     color: black;
-}
-
-.footer {
-    height: 80px;
-    text-align: center;
-    color: black;
-    display: block;
-    background-image: linear-gradient(white, lightgray);
-}
-
-.footer>img,
-a {
-    display: inline-block;
-    height: 25px;
-    text-align: center;
-    font-style: italic;
-}
-
-.footer>img {
-    vertical-align: middle;
 }
