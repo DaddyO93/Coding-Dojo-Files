@@ -1,0 +1,206 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 970px;
+    height: 580px;
+    background-image: radial-gradient(rgb(76, 120, 177), rgb(42, 99, 173));
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 5px 0px rgb(7, 10, 22);
+}
+
+#wrapper>img {
+    height: 100px;
+    display: inline-block;
+    padding: 10px 0px 0px 10px;
+}
+
+#textSearch {
+    width: 390px;
+    align-items: center;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    margin-left: 200px;
+}
+
+#textSearch h5 {
+    display: inline;
+    color: white;
+}
+
+#textSearch h2 {
+    display: inline;
+}
+
+#textSearch a {
+    display: inline;
+    color: yellow;
+}
+
+#textSearch a:last-of-type {
+    padding-right: 50px;
+}
+
+#search {
+    width: 260px;
+    align-items: right;
+    margin-right: 0px;
+    background-color: rgb(61, 61, 61);
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0px 3px 8px 0px rgb(20, 34, 34);
+}
+
+#search>input {
+    display: inline-block;
+    text-align: center;
+    color: rgba(73, 77, 77, 0.315);
+    height: 25px;
+    width: 150px;
+}
+
+#search>button {
+    background-color: rgb(47, 71, 148);
+    border-radius: 5px;
+    color: white;
+    font-size: small;
+    padding: 5px;
+}
+
+#menu {
+    padding: 10px;
+    margin: 10px 20px 20px 70px;
+    text-align: center;
+    border-radius: 5px;
+    width: 840px;
+    background-image: linear-gradient(rgb(56, 160, 230), rgb(94, 180, 238), rgb(56, 160, 230));
+    box-shadow: 0px 3px 8px 0px rgb(20, 34, 34);
+}
+
+#menu>li {
+    display: inline;
+}
+
+#menu li>a {
+    padding: 10px;
+    font-size: larger;
+    font-weight: lighter;
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+#main>ul {
+    padding-top: 10px;
+    margin-left: 50px;
+    list-style-type: none;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    font-size: large;
+}
+
+#main li>a {
+    display: block;
+    color: white;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.yellow {
+    color: yellow;
+    display: inline-block;
+    font-size: 8px;
+    vertical-align: middle;
+}
+
+#description {
+    display: inline-block;
+    width: 635px;
+    margin: 0px 40px;
+}
+
+#description>p {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-size: medium;
+}
+
+#description ul {
+    margin-top: 0px;
+    list-style-type: none;
+    text-align: center;
+    color: yellow;
+    font-style: italic;
+    font-size: x-large;
+}
+
+#description li {
+    padding-top: 10px;
+}
+
+#description h3 {
+    color: white;
+    text-align: center;
+}
+
+#divider {
+    height: 270px;
+    width: 970px;
+    display: block;
+}
+
+.links {
+    vertical-align: top;
+    width: 255px;
+    height: 255px;
+    margin: 10px 0px 0px 20px;
+    padding: 0px 150px 0px 20px;
+    display: inline-block;
+    text-align: center;
+    border-top: 5px solid rgb(76, 120, 177);
+}
+
+#divider .links:first-child {
+    margin-left: 70px;
+}
+
+.links p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.links h2 {
+    margin-bottom: 10px;
+}
+
+.links a {
+    font-size: 13px;
+    color: rgb(56, 160, 230);
+}
+
+#footer {
+    text-align: center;
+    display: block;
+    width: 970px;
+    background-image: linear-gradient(rgb(30, 75, 133), rgb(58, 151, 212));
+}
+
+#footer a {
+    margin: 40px 20px 10px 20px;
+    display: inline-block;
+    color: rgb(139, 172, 212);
+    text-decoration: none;
+}
+
+#footer h6 {
+    color: rgb(139, 172, 212);
+    margin-top: 0px;
+    padding-bottom: 10px;
+}
