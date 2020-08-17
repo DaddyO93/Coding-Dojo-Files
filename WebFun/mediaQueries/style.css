@@ -1,0 +1,97 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+
+/* .row::after {
+    content: "";
+    clear: both;
+    display: block;
+} */
+
+button {
+    background-color: blue;
+    display: inline-block;
+    height: 30px;
+}
+
+p {
+    display: inline-block;
+    border: 1px solid black;
+    font-size: large;
+    text-align: justify;
+}
+
+.col {
+    display: inline-block;
+    vertical-align: top;
+    /* padding: 20px; */
+}
+
+
+/* .row {
+    padding: 10px;
+    align-items: center;
+} */
+
+
+/* For phones: */
+
+@media only screen and (max-width: 480px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat (1, 4fr);
+        column-gap: 10px;
+    }
+    .impt-2 {
+        display: none;
+    }
+    /* .impt-1,
+    .lg-4 {
+        width: 100%;
+    } */
+}
+
+
+/* For tablet: */
+
+@media only screen and (min-width: 481px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat (2, 2fr);
+        column-gap: 10px;
+    }
+    .impt-1,
+    .impt-2 {
+        width: 2fr;
+    }
+    /* .med-2 {
+        width: 50%;
+    }
+    .impt-1 {
+        width: 100%;
+    }
+    .impt-2 {
+        width: 75%;
+    } */
+}
+
+
+/* For desktop: */
+
+@media only screen and (min-width: 1024px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat (4, 1fr);
+        column-gap: 10px;
+    }
+    /* .lg-1 {
+        width: 25%;
+    } */
+    .impt-1 {
+        width: 3fr;
+    }
+    .impt-2 {
+        width: 1fr;
+    }
+}
