@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Functions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#addClassBtn').click(function() {
+                $('#addClass h4').addClass('background-color: red')
+            });
+
+            $('#slideToggleBtn').click(function() {
+                $('#slideToggle img').toggle();
+            });
+
+            $('#appendBtn').click(function() {
+                $('#append h4').append("<u>---You just added this text with Append!</u>")
+            });
+
+            $('#beforeBtn').click(function() {
+                $('#beforeAfter h4').before('<u>This is before!---</u>')
+            });
+
+            $('#afterBtn').click(function() {
+                $('#beforeAfter h4').after('<u>---This is after!</u>')
+            });
+
+            $('#attrBtn').click(function() {
+                $('#attr img').attr("src", "imgs/done.jpg");
+            });
+
+            $('#textBtn').click(function() {
+                $('#text h4').text("Wait! I wasn't done reading that!");
+            });
+
+            $('#hideBtn').click(function() {
+                $('#hideShow h1').hide();
+            });
+
+            $('#showBtn').click(function() {
+                $('#hideShow h1').show();
+            });
+
+            $('#upBtn').click(function() {
+                $('#upDown h1, h4').slideUp();
+            });
+            $('#downBtn').click(function() {
+                $('#upDown h1, h4').slideDown();
+            })
+
+            $('#fadeInOutBtn').click(function() {
+                $('#fadeInOut h4').fadeOut();
+            });
+
+            $('#fadeOutBtn').click(function() {
+                $('#fadeInOut h4').fadeOut();
+            });
+
+            $('#fadeInBtn').click(function() {
+                $('#fadeInOut h4').fadeIn();
+            });
+
+            $('#htmlBtn').click(function() {
+                $('#html').html('<em><h4>You changed the HTML</h4></em>');
+            });
+
+            $('#val #option').val('notChanged');
+
+            $('#valBtn').click(function() {
+                $('#val #option').val('changed');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="leftColumn">
+            <button id="addClassBtn">Add Class</button>
+            <div class="sectionArea" id="addClass">
+                <h1>Add Class</h1>
+                <h4>Click the button to add a class to this line</h4>
+            </div>
+            <p></p>
+
+            <button id="slideToggleBtn">Slide Toggle</button>
+            <div class="sectionArea" id="slideToggle">
+                <h1>Slide Toggle</h1>
+                <h4>Click the button to reveal a hidden image</h4>
+                <img src="imgs/charming.jpg" alt="Charming emoji">
+            </div>
+            <p></p>
+
+            <button id="appendBtn">Append</button>
+            <div class="sectionArea" id="append">
+                <h1>Append</h1>
+                <h4>Click the button to add text to this line</h4>
+            </div>
+            <p></p>
+
+            <button id="beforeBtn">Before</button>
+            <div class="sectionArea" id="beforeAfter">
+                <h1>Before/After</h1>
+                <h4>Click the button to add text before or after this line</h4>
+                <button id="afterBtn">After</button>
+            </div>
+            <p></p>
+
+            <button id="attrBtn">Attribute</button>
+            <div class="sectionArea" id="attr">
+                <h1>Attribute</h1>
+                <h4>Click the button to change the attribute of this image</h4>
+                <img src="imgs/hmm.jpg" alt="Wondering Emoji">
+            </div>
+            <p></p>
+
+            <button id="textBtn">Text</button>
+            <div class="sectionArea" id="text">
+                <h1>Text</h1>
+                <h4>Click the button to change some text around here</h4>
+            </div>
+            <p></p>
+        </div>
+
+        <div id="rightColumn">
+            <button id="hideBtn">Hide</button>
+            <div class="sectionArea" id="hideShow">
+                <h1>Hide/Show</h1>
+                <h4>Click the buttons to make things disappear or appear</h4>
+                <button id="showBtn">Show</button>
+            </div>
+            <p></p>
+
+            <button id="upBtn">Up</button>
+            <div class="sectionArea" id="upDown">
+                <h1>Up/Down</h1>
+                <h4>Click the buttons to roll this up, or bring it back down again</h4>
+                <button id="downBtn">Down</button>
+
+            </div>
+            <p></p>
+
+            <button id="fadeOutBtn">Fade Out</button>
+            <div class="sectionArea" id="fadeInOut">
+                <h1>Fade In/Fade Out</h1>
+                <h4>Click the button to make things fade away, or fade back into existance</h4>
+                <button id="fadeInBtn">Fade In</button>
+
+            </div>
+            <p></p>
+
+            <button id="htmlBtn">HTML</button>
+            <div class="sectionArea" id="html">
+                <h1>HTML</h1>
+                <h4>Click the button to change some HTML here</h4>
+            </div>
+            <p></p>
+
+            <button id="valBtn">Set Value</button>
+            <div class="sectionArea" id="val">
+                <h1>Set Value</h1>
+                <h4>Click the button to change the checkbox below</h4>
+                <select id="option">
+                    <option value="notChanged">Not Changed</option>
+                    <option value="changed">Changed</option>
+                </select>
+
+            </div>
+            <p></p>
+        </div>
+
+</body>
+
+</html>
