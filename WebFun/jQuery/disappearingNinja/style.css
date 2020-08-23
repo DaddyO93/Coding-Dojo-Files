@@ -1,0 +1,21 @@
+#wrapper {
+    background-color: rgb(59, 59, 59);
+    width: 830px;
+    padding: 10px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 270px 270px;
+    gap: 10px;
+    padding: 0px;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    margin: 20px;
+}

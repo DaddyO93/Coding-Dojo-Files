@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disappearing Ninja</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#wrapper #grid img').click(function() {
+                $(this).attr("src", "imgs/emoji.png")
+            })
+            $('#refresh').click(function() {
+                location.reload(true);
+            })
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="grid">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+            <img src="imgs/Lance Family.jpg" alt="Lance Family Portrait">
+
+        </div>
+        <button id="refresh">Refresh</button>
+    </div>
+
+</body>
+
+</html>
