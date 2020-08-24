@@ -1,5 +1,7 @@
 #wrapper {
     width: 500px;
+    padding: 20px;
+    background-image: radial-gradient(gray, black);
 }
 
 img {
