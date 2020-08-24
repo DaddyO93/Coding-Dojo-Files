@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja to Cat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("img").click(function() {
+                var first = $(this).attr("src");
+                var second = $(this).attr("data-alt-src");
+
+                if ($(this).attr("src") == first) {
+                    $(this).attr("src", second);
+                    $(this).attr("data-alt-src", first)
+                } else {
+                    $(this).attr("src", first);
+                    $(this).attr("data-alt-src", second);
+                };
+            })
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <img src="imgs/primary1.jpg" data-alt-src="imgs/secondary1.jpg">
+        <img src="imgs/primary2.jpg" data-alt-src="imgs/secondary2.jpg">
+        <img src="imgs/primary3.jpg" data-alt-src="imgs/secondary3.jpg">
+        <img src="imgs/primary4.jpg" data-alt-src="imgs/secondary4.jpg">
+        <img src="imgs/primary5.jpg" data-alt-src="imgs/secondary5.jpg">
+
+    </div>
+
+
+</body>
+
+</html>
